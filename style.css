@@ -134,7 +134,7 @@ body {
     text-align: center;
     padding: 150px 0;
     color: #7b5e91; /* pastel-friendly text color */
-    background: url('images/hero-floral.jpg') no-repeat center center;
+    background: url('images/floral3.jpeg') no-repeat center center;
     background-size: cover;
     border-radius: 15px;
     margin-top: 50px;
@@ -370,3 +370,16 @@ body {
   .social-links a:hover {
     color: #ff7f7f;  /* Soft pastel pink hover */
   }
+  .navbar-brand img {
+    height: 50px;
+    width: auto;
+  }
+  footer a {
+    color: #000;
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
+    color: #e1306c; /* Instagram pink */
+  }
+ 

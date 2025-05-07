@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | Make It Aesthetic</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const categoryLinks = document.querySelectorAll(".shop-category");
+      categoryLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const category = this.dataset.category;
+          window.location.href = `shop.html?category=${category}`;
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">MIA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="shop.html" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Shop
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="shopDropdown">
+              <li><a class="dropdown-item shop-category" href="#" data-category="all">All</a></li>
+              <li><a class="dropdown-item shop-category" href="#" data-category="charms">Clay Charms</a></li>
+              <li><a class="dropdown-item shop-category" href="#" data-category="stickers">Sticker Packs</a></li>
+              <li><a class="dropdown-item shop-category" href="#" data-category="keychains">Keychains</a></li>
+              <li><a class="dropdown-item shop-category" href="#" data-category="decor">Room Décor</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <!-- Home Section (Hero Section) -->
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to MIA</h1>
+      <p>Make It Aesthetic — Creating beauty through handmade, unique items.</p>
+      <a href="shop.html" class="btn btn-outline-primary">Explore Our Shop</a>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials py-5 text-center">
+    <div class="container">
+      <h2 class="mb-4">What Our Customers Say</h2>
+      <div class="row">
+        <!-- Testimonial 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-item p-4 shadow-sm rounded">
+            <p>"MIA's products are absolutely stunning! I bought some keychains and stickers, and they make the perfect addition to my room. So happy with my purchase!"</p>
+            <h5>- Anika Sharma</h5>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-item p-4 shadow-sm rounded">
+            <p>"The charms are so cute and unique! Every time someone sees them, they ask where I got them from. I highly recommend MIA!"</p>
+            <h5>- Rohan Verma</h5>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-item p-4 shadow-sm rounded">
+            <p>"Absolutely love the room décor items! They’ve really transformed my space into a cozy haven. Can't wait to shop more from MIA."</p>
+            <h5>- Priya Patel</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2025 MIA | Make It Aesthetic</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>

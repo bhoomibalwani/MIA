@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop | Make It Aesthetic</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .product-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    .product-price {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #6c757d;
+    }
+    .product-title {
+      font-size: 1.2rem;
+      color: #343a40;
+    }
+    .filter-button {
+      font-size: 1rem;
+      margin: 0 5px;
+      padding: 8px 16px;
+      border: 2px solid #f1c6d2;
+      background-color: #f1c6d2;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .filter-button:hover {
+      background-color: #f8d7db;
+      border-color: #e2b0b5;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light pastel-bg border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">MIA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+              Shop
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="shop.html?category=all">All</a></li>
+              <li><a class="dropdown-item" href="shop.html?category=charms">Clay Charms</a></li>
+              <li><a class="dropdown-item" href="shop.html?category=stickers">Sticker Packs</a></li>
+              <li><a class="dropdown-item" href="shop.html?category=keychains">Keychains</a></li>
+              <li><a class="dropdown-item" href="shop.html?category=decor">Room Decor</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Product Catalog Section -->
+  <section class="product-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Shop Our Collection</h2>
+      <!-- Filter buttons -->
+      <div class="text-center mb-4">
+        <button class="filter-button" onclick="filterProducts('all')">All</button>
+        <button class="filter-button" onclick="filterProducts('charms')">Clay Charms</button>
+        <button class="filter-button" onclick="filterProducts('stickers')">Sticker Packs</button>
+        <button class="filter-button" onclick="filterProducts('keychains')">Keychains</button>
+        <button class="filter-button" onclick="filterProducts('decor')">Room Decor</button>
+      </div>
+
+      <div class="row" id="productGrid">
+        <!-- Products will be filtered and shown here -->
+        <div class="col-md-4 mb-4 product-item" data-category="charms">
+          <div class="card shadow-sm h-100 product-card">
+            <img src="images/gallery2.jpg" class="card-img-top" alt="Clay Charm" />
+            <div class="card-body">
+              <h5 class="card-title product-title">Mini Clay Charm</h5>
+              <p class="card-text product-price">₹99</p>
+              <a href="product-details.html" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 product-item" data-category="stickers">
+          <div class="card shadow-sm h-100 product-card">
+            <img src="images/gallery1.jpg" class="card-img-top" alt="Sticker Pack" />
+            <div class="card-body">
+              <h5 class="card-title product-title">Floral Sticker Pack</h5>
+              <p class="card-text product-price">₹69</p>
+              <a href="product-details.html" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 product-item" data-category="decor">
+          <div class="card shadow-sm h-100 product-card">
+            <img src="images/gallery3.jpg" class="card-img-top" alt="Room Decor" />
+            <div class="card-body">
+              <h5 class="card-title product-title">Pastel Room Decor</h5>
+              <p class="card-text product-price">₹149</p>
+              <a href="product-details.html" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 product-item" data-category="keychains">
+          <div class="card shadow-sm h-100 product-card">
+            <img src="images/gallery4.jpg" class="card-img-top" alt="Keychain" />
+            <div class="card-body">
+              <h5 class="card-title product-title">Aesthetic Keychain</h5>
+              <p class="card-text product-price">₹89</p>
+              <a href="product-details.html" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more product cards similarly -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-4">
+    <p>© 2025 MIA | Make It Aesthetic</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Filter products based on selected category
+    function filterProducts(category) {
+      const allItems = document.querySelectorAll('.product-item');
+      allItems.forEach(item => {
+        const itemCategory = item.dataset.category;
+        item.style.display = (category === 'all' || itemCategory === category) ? 'block' : 'none';
+      });
+    }
+
+    // Initialize filter based on URL parameter (optional)
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedCategory = urlParams.get('category') || 'all';
+    filterProducts(selectedCategory);
+  </script>
+</body>
+</html>
